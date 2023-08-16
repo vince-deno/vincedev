@@ -1,0 +1,183 @@
+          
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 <!--=============== REMIXICONS ===============-->
+                 <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                 <link href="./vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+                 <link href="./vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+                 <link href="./vendor/quill/quill.snow.css" rel="stylesheet">
+                 <link href="./vendor/quill/quill.bubble.css" rel="stylesheet">
+                 <link href="./vendor/remixicon/remixicon.css" rel="stylesheet">
+                 <link href="./vendor/simple-datatables/style.css" rel="stylesheet">            <link rel="stylesheet" href="./css/vlm.css">
+            <link rel="stylesheet" href="./css/main.css">
+            <link rel="stylesheet" href="./css/bootstrap.css.map">
+          </head>
+          <body>
+            <%- include('./pages/header.ejs') %>
+          <!--=============== HEADER ===============-->
+   
+          <!-- Section-->
+                     <!-- Header-->
+                     <header class="bg-dark py-5">
+                        <div class="vlmcontainer px-5">
+                            <div class="row gx-5 align-items-center justify-content-center">
+                                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                                    <div class="my-5 text-center text-xl-start">
+                                        <h1 class="display-5 fw-bolder text-white mb-2">Buy anything and everythingfor modern businesses</h1>
+                                        <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize workshop, the world’s most popular sales toolkit!</p>
+                                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                                            <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                                    <a class="btn btn-outline-success btn-lg px-4" href="#!">Assecories/Car care</a>
+                                    <a class="btn btn-outline-info btn-lg px-4" href="#!">Electronics</a>
+                                    <a class="btn btn-outline-warning btn-lg px-4" href="#!">Parts/Tools</a>
+                                    <hr>
+                                    <!-- <img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /> -->
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+            <!-- start of products -->
+            <section class="products">
+                <div class="section-title">
+                  <h2>Latest Products</h2>
+                </div>
+                <div class="products-center">
+            
+            
+                    <article class="product">
+                        <!-- <div class="img-container">
+                          <img src="./img/product-1.png" alt="course" class="product-img">
+                          <button class="bag-btn" data-id="1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"></path>
+                            </svg>
+                            add to cart 
+                          </button>
+                        </div>
+                        <h3>Learn javscript and typescript</h3>
+                        <h4>Ksh 5000</h4> -->
+                        <div class="img-container">
+                            <% array.forEach(element => { %>
+                            <img src="./img/product-1.png" alt="course" class="product-img">
+                            <button class="bag-btn" data-id="1">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"></path>
+                              </svg>
+                              add to cart 
+                            </button>
+                          </div>
+                          <br>
+                          <h6 class="text-muted"><%= element.created_at.toLocaleString() %></h6>
+                          <h3><%= element.title %></h3>
+                          <h4>Ksh <%= element.value %></h4> 
+
+                        <% }) %>
+
+                    </div>
+                      </article>
+            
+            
+                      
+              </section>
+                <!-- end of products -->
+            
+                         <div id="vlmapp3">
+              
+                            <div class="container">
+                                <div class="drop">
+            
+                                </div>
+                                <div class="drop">
+                                    
+                                </div>
+                                <div class="drop">
+                                    
+                                </div>
+                            </div>
+                         </div>
+                         <div class="vlmprogress">
+                            <!-- <span id="progress-value">&#x1f815;</span> -->
+                            <!-- <span id="progress-value">&#x1f85;</span> -->
+                            <!-- <span id="progress-value">&#x1f125;</span> -->
+                            <!-- <span id="progress-value">&#x1f300;</span> -->
+                            <!-- <span id="progress-value">&#x1f302;</span> -->
+            
+                            <!-- <span id="progress-value">&#x1f400;</span> -->
+                            <!-- <span id="progress-value">&#x1f500;</span> -->
+                            <!-- <span id="progress-value">&#x1f600;</span> -->
+                            <!-- <span id="progress-value">&#x1f800;</span> -->
+                            <!-- <span id="progress-value">&#x1f900;</span> -->
+                            <div class="progress-value">
+                                <p>+</p>
+                            </div>
+                                <li style="--i:1">
+                                    <a href="/login">SignIn</a>
+                                    </li>
+                    
+                    
+                                    <li style="--i:2">
+                                        <a href="#" class="vlmtop">&#x1f815;</a>
+                                        </li>
+                    
+                                        <li style="--i:3">
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+                                                <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+                                              </svg></a>
+                                            </li>
+                                            <li style="--i:4">
+                                                <a href="#">Chat</a>
+                                                </li>
+                                                <li style="--i:5">
+                                                    <a href="/">Games</a>
+                                                    </li>
+                                                    <li style="--i:6">
+                                                        <a href="#">Foodie</a>
+                                                        </li>
+                   
+                         
+            
+                         </div>
+            
+            
+            
+            
+                         <script>
+                            let vio=document.querySelector('.progress-value')
+                            let vie=document.querySelector('.vlmprogress')
+            
+                            vio.onclick=function(){
+                                vie.classList.toggle('active')
+                            }
+            
+                            function vlmscroll(){
+                                let s=document.querySelector('.vlmprogress')
+                                let sc=document.querySelector('.progress-value')
+                                let top=document.querySelector('.vlmtop')
+                                let p=document.documentElement.scrollTop;
+                                let hs=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+                                let sh=Math.round((p*100)/hs)
+            
+                                if (p>50) {
+                                    s.style.display="block"
+                                }else{
+                                    s.style.display="none"
+                                }
+                                top.addEventListener("click",()=>{
+                                    document.documentElement.scrollTop=0;
+                                })
+                                sc.style.background =`conic-gradient(#1b2b3b ${sh}%,cyan ${sh}%)`
+                            }
+                            window.onscroll = vlmscroll
+                            // window.onload= vlmload
+            
+                         </script>
+           <%- include('./pages/footer.ejs') %>

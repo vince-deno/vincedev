@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <%- include('./partials/header.ejs') %>
+  <%- include('./pages/sidebar.ejs') %>
+
+
+  <!-- vlm main part -->
+<main id="main" class="main">
+  <div class="d-flex justify-content-between flex-wrap flex-md nowrp align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1>All Admin users</h1>
+      <div class="btn-toolbar mb-2 mb-md 0">
+          <div class="btn-group me-2">
+              <a href="#" class="btn btn-sm btn-outline-secondary">?</a>
+            </div>
+      </div>
+  </div>
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+      <li class="breadcrumb-item active">users</li>
+    </ol>
+  
+  <!-- End Page Title -->
+  <!-- End Page Title -->
+  <div class="container">
+    <div class="row my-4">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr class="table-dark table-striped-columns">
+                    <th>No</th>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Profile</th>
+                    <th scope="col">name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% let counter = 1; %>
+                  <% users.forEach(user => { %>
+                    <tr class="align-middle table-dark">
+                      <td><%= counter %></td>
+                      <td><%= user._id %></td>
+                      <td>
+                        <!-- {"vlmid":"106547020211935736948","vlmname":"Vincent m","vlmprofile":"https://lh3.googleusercontent.com/a/AAcHTtdekw-zJ9RUTQVUWX5ccTscJEPC2Qv91ItKToTYkazZh3s=s96-c","vlmemail":"vincentmendwa@gmail.com","vlmpassword":"$2b$10$kjVXWFwnbvAeGf9tZ1DMteYWEpgBLv0jv.SIsFUfKa.QKQUlDplzW","vlmverify":true,"__v":{"$numberInt":"0"}} -->
+                        <img style="    width: 30px;
+                          height: 30px;
+                          border-radius: 50%;
+                          object-fit: cover;" src="<%= user.vlmprofile %>" alt="Avatar" class="avatar">
+                        
+                        </td>
+                      <td><%= user.vlmname %></td>
+                      <td><%= user.vlmemail %></td>
+                      <td>
+                        <a href="/admin/users/new/view/<%= user._id %>" class="btn btn-primary btn-sm">
+                          <i class="bi bi-eye"></i>
+                        </a>
+                        <a href="/admin/users/new/edit/<%= user._id %>" class="btn btn-primary btn-sm">
+                          <i class="bi bi-pencil-square"></i>
+                        </a>
+
+                        <a href="/admin/users/new/edit/<%= user._id %>" class="btn  btn-sm">
+                          <form action="/admin/users/new/<%= user._id %>?_method=DELETE" method="post"  class="position-relative">
+                            <button type="submit" class="btn btn-danger btn-sm">
+                              <i class="bi bi-person-x"></i>
+                            </button>
+                            </form>
+                        </a>
+                
+                      </td>
+                    </tr>
+                    <% counter++; %>
+                  <% }) %>
+                </tbody>
+              </table>
+
+                <br>
+
+<br>
+                <!-- Pagination -->
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center">
+                    <% if (currentPage > 1) { %>
+                      <li class="page-item">
+                        <a class="page-link" href="?page=<%= currentPage - 1 %>" aria-label="Previous">
+                          <span aria-hidden="true">Previous &laquo;</span>
+                        </a>
+                      </li>
+                    <% } else { %>
+                      <li class="page-item disabled">
+                        <span class="page-link" aria-hidden="true">&laquo;</span>
+                      </li>
+                    <% } %>
+                    <% for (let i = 1; i <= totalPages; i++) { %>
+                      <li class="page-item <%= i === currentPage ? 'active' : '' %>">
+                        <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+                      </li>
+                    <% } %>
+                    <% if (currentPage < totalPages) { %>
+                      <li class="page-item">
+                        <a class="page-link" href="?page=<%= currentPage + 1 %>" aria-label="Next">
+                          <span aria-hidden="true">Next &raquo;</span>
+                        </a>
+                      </li>
+                    <% } else { %>
+                      <li class="page-item disabled">
+                        <span class="page-link" aria-hidden="true">&raquo;</span>
+                      </li>
+                    <% } %>
+                  </ul>
+                </nav>
+            </div>
+    
+        </div>
+    </div>
+  </div>
+
+</main><!-- End #main -->
+<%- include('./partials/footer.ejs') %>

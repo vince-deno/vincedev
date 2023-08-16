@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .rounded-image {
+        border-radius: 7px;
+    }
+    .error{
+    position: absolute;
+    margin-top: -37em;
+    padding: 10px 10px 10px;
+    font-family: cursive;
+    font-size: 15px;
+    box-shadow: inset 0 2px 20px -10px red;
+    color: red;
+    border-radius: 5px;
+}
+    .multiple-images {
+        display: none;
+    }
+    .preview-images {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    .preview-image {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        overflow: hidden;
+    }
+    .preview-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+</head>
+<body>
+  <%- include('./partials/header.ejs') %>
+  <%- include('./pages/sidebar.ejs') %>
+
+
+  <!-- vlm main part -->
+<main id="main" class="main">
+  <div class="d-flex justify-content-between flex-wrap flex-md nowrp align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1>supermarket products</h1>
+      <div class="btn-toolbar mb-2 mb-md 0">
+          <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalDialogScrollable">
+                + products
+              </button>
+              <div class="modal fade" id="modalDialogScrollable" tabindex="-1">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add supermarket products</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                        <!-- Display validation errors -->
+                    
+
+                    <div class="modal-body">
+                                     <!-- Display validation errors -->
+                                     <div class="error" style=<%=dis %>>
+                                      <p><%= vlmerr %></p>
+                                  </div>
+                      <form id="editForm" method="POST" action="/admin/supermarket">
+         
+                        <div class="form-group">
+                          <label for="name">Title</label>
+                          <input type="text" class="form-control" id="name"  name="title" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <label for="name">Slug</label>
+                          <input type="text" class="form-control" id="slug" name="slug" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <label for="name">Content</label>
+                        <textarea name="content" class="form-control"></textarea>
+                        </div>
+                        <br>
+                        <br>
+                        <!-- Add more input fields as needed -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" id="btn" onclick="vlmclick()" class="btn btn-primary">save changes</button>
+                        </div>
+                      </form>
+                    </div>
+                  </form>
+                  </div>
+                  </div>
+                </div>
+              </div><!-- End Modal Dialog Scrollable-->
+            </div>
+      </div>
+  </div>
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+      <li class="breadcrumb-item active">supermarket products</li>
+    </ol>
+  
+  <!-- End Page Title -->
+  <!-- End Page Title -->
+</main><!-- End #main -->
+<script>
+  function vlmclick(){
+    alert('you')
+  }
+</script>
+
+<%- include('./partials/footer.ejs') %>
+
+

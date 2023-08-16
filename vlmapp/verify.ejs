@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+    .vlmcont{
+        width: 100%;
+        height: 100vh;
+        background: #dee1ec;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn:last-child{
+    background: #00092d;
+    width: 120px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1),
+    15px 15px 10px rgba(0,0,0, 0.05),
+    15px 10px 15px rgba(0,0,0, 0.25);
+}
+.btn:last-child:hover{
+    width: 150px;
+}
+.btn{
+    color: rgb(196, 228, 255);
+    font-weight: 500;
+    text-transform: lowercase;
+    cursor: pointer;
+    letter-spacing: .1em;
+    font-size: 1em;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.vlmcont .popup .btn::before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 2px;
+    background: rgba(255,255,255, .3);
+    border-radius: 5px;
+}
+.vlmcont .popup span{
+    font-size: 5em;
+    color: #06860c;
+    border-radius: 40px;
+    position: relative;
+    top: -1em;
+    box-shadow: inset 2px 2px 10px rgba(3, 63, 53, 0.751), 15px 15px 10px rgba(0, 0, 0, 0.05), 15px 10px 15px rgba(0,0,0, 0.25);
+
+}
+.btn a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #dee1ec;
+    font-size: 1.4em;
+}
+.vlmcont form .popup .inputbox:last-child {
+    background: #030621;
+    width: 120px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1), 15px 15px 10px rgba(0,0,0, 0.05), 15px 10px 15px rgba(0,0,0, 0.25);
+}
+.vlmcont form .inputbox {
+    background: #00092d;
+    width: 120px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1),
+    15px 15px 10px rgba(0,0,0, 0.05),
+    15px 10px 15px rgba(0,0,0, 0.25);
+}
+
+.vlmcont form .popup .inputbox{
+    position: relative;
+    width: 245px;
+    height: 40px;
+    margin-top: 10em;
+    font-size: 1.5em;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1), inset -2px -5px 10px rgba(255,255,255, 1), 15px 15px 10px rgba(0,0,0, 0.05), 15px 10px 15px rgba(0,0,0, 0.25);
+    border-radius: 25px;
+    left: 3.4em;
+}
+.vlmcont form .inputbox{
+    position: relative;
+    width: 225px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1),
+    inset -2px -5px 10px rgba(255,255,255, 1),
+    15px 15px 10px rgba(0,0,0, 0.05),
+    15px 10px 15px rgba(0,0,0, 0.25);
+    border-radius: 25px;
+}
+
+.vlmcont form .popup .inputbox a input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 15px;
+
+    
+}
+
+.vlmcont form .inputbox  input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 15px;
+    
+}
+.vlmcont form .inputbox::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 2px;
+    background: rgba(255,255,255, .3);
+    border-radius: 5px;
+}
+.vlmcont  form .inputbox input[type="submit"] {
+    color: rgb(196, 228, 255);
+    font-weight: 500;
+    text-transform: lowercase;
+    cursor: pointer;
+    letter-spacing: .1em;
+    font-size: 1em;
+    transition: 0.5s;
+ 
+}
+
+.vlmcont form .inputbox {
+    background: #080327;
+    width: 120px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1), 15px 15px 10px rgba(0,0,0, 0.05), 15px 10px 15px rgba(0,0,0, 0.25);
+}
+
+.vlmcont  form .inputbox:last-child:hover{
+    width: 150px;
+}
+
+
+.vlmcont form .popup{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    width: 350px;
+    height: 350px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 0.8em;
+    transition: 0.25s;
+    background:#00a512;
+    padding: 0 30px 30px;
+   visibility: hidden;
+    box-shadow: 
+    inset 10px 10px 10px rgba(190,1,254, 0.05),
+    15px 25px 10px rgba(47, 254, 1, 0.05),
+    15px 20px 20px rgba(28, 255, 66, 0.25),
+    inset -10px -10px 15px rgba(255,255,255, 0.5);
+    border-radius: 44% 56% 65% 35% / 57% 58% 42% 43%;
+    text-align: center;
+    transition: transform .4s ,top .4s;
+}
+.vlm-pop{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+.vlmcont form .popup span{
+    position: relative;
+    width: 400px;
+    background: #00092d;
+    margin-top: -50px;
+    border-radius: 110% 78% 32% 43%/44% 56% 65% 35%  ;
+}
+.vlmcont form .popup h1{
+    font-size: 3em;
+    color: #030621;
+}
+.vlmcont form .popup p{
+    text-align: center;
+    display: block;
+    align-items: center;
+    font-size: 1.5em;
+    top: 2em;
+    position: relative;
+}
+
+</style>
+</head>
+  <body>
+      <div class="vlmcont">
+          <form action="/submit" method="get">
+            <div class="inputbox">
+                <input type="submit" class="vlmbt" name="vlmcheck" value="Click here">
+            </div>
+
+            <% if (vlmbtn){ %>
+              <!--  -->
+
+<script>
+  setTimeout(function() {
+    document.querySelector('.vlmbt').style.display = 'none';
+  }, 300); // Set the time in milliseconds after which the element will disappear (3 seconds in this example)
+</script>
+<!--  -->
+<% } %>
+        </form>
+    </div>
+  </body>
+</html>

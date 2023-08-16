@@ -1,0 +1,32 @@
+require('dotenv').config()
+const vlmkey={
+    google:{
+        clientId:process.env.GOOGLE_CLIENT_ID,
+        clientSecret:process.env.GOOGLE_CLIENT_SECRET,
+        fbclentId:process.env.fb_id,
+        fbclientsecrect:process.env.fb_secrect,
+        twitter_id:process.env.twitter_id,
+        twittersecrect:process.env.twitter_secrect,
+        apiKey:process.env.apiKey,
+        authDomain:process.env.authDomain,
+        projectId:process.env.projectId,
+        storageBucket:process.env.storageBucket,
+        messagingSenderId:process.env.messagingSenderId,
+        appId:process.env.appId,
+        measurementId:process.env.measurementId,
+        private_key:process.env.private_key,
+        type:process.env.type,
+        private_key_id:process.env.private_key_id,
+        client_email:process.env.client_email,
+        client_id:process.env.client_id,
+        auth_uri:process.env.auth_uri,
+        token_uri:process.env.token_uri,
+        auth_provider_x509_cert_url:process.env.auth_provider_x509_cert_url,
+        client_x509_cert_url:process.env.client_x509_cert_url,
+        universe_domain:process.env.universe_domain,
+        vlmmail:process.env.vlm_mail,
+        vlmpass:process.env.vlm_pass
+    }
+}
+
+module.exports=vlmkey.google

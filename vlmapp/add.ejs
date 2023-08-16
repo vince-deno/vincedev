@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+  <%- include('./partials/header.ejs') %>
+  <%- include('./pages/sidebar.ejs') %>
+
+
+  <!-- vlm main part -->
+<main id="main" class="main">
+  <div class="d-flex justify-content-between flex-wrap flex-md nowrp align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1>New <%-vtitle %></h1>
+      <div class="btn-toolbar mb-2 mb-md 0">
+          <div class="btn-group me-2">
+              <a href="#" class="btn btn-sm btn-outline-secondary">?</a>
+            </div>
+      </div>
+  </div>
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+      <li class="breadcrumb-item active"><%- vtitle %>-add</li>
+    </ol>
+  
+  <!-- End Page Title -->
+  <div class="container">
+      <%- include('./pages/vlmform.ejs') %>
+  </div>
+<!-- https://www.softlay.com/downloads/windows-7-ultimate?download=links -->
+</main><!-- End #main -->
+<%- include('./partials/footer.ejs') %>

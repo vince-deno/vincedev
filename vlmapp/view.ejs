@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .profile-card {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 10px;
+    }
+  </style>
+</head>
+<body>
+  <%- include('./partials/header.ejs') %>
+  <%- include('./pages/sidebar.ejs') %>
+
+
+  <!-- vlm main part -->
+<main id="main" class="main">
+  <div class="d-flex justify-content-between flex-wrap flex-md nowrp align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1>view single customer</h1>
+      <div class="btn-toolbar mb-2 mb-md 0">
+          <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalDialogScrollable">
+               ALL Customers
+              </button>
+            </div>
+      </div>
+  </div>
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+      <li class="breadcrumb-item active">Email:<%- customer.email%></li>
+    </ol>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="profile-card">
+            <img src="../img/1.png" alt="Profile Image" class="profile-image">
+            <h4><%- customer.name %></h4>
+            <p>Phone: <%- customer.vlmphone %></p>
+            <p>Location: <%- customer.vlmuserlocation %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Page Title -->
+  <!-- End Page Title -->
+</main><!-- End #main -->
+<%- include('./partials/footer.ejs') %>

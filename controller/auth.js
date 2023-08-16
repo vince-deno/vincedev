@@ -1,0 +1,8 @@
+function vlmauth(){
+
+}
+
+function vlmclientauth(){
+
+}
+

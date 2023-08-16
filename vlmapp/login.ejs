@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>  
+  *{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Geneva, Verdana, sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dee1ec;
+}
+.vlmcont{
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    left: -80px;
+}
+.vlmcont .drop{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0, 0.05),
+    2px 35px 20px rgba(0,0,0, 0.05),
+    25px 30px 30px rgba(0,0,0, 0.05),
+    inset -20px -20px  25px rgba(255,255,255, 0.9);
+    border-radius: 52% 48% 33% 67% / 38% 45% 55% 62%;
+}
+.vlmcont .drop:hover{
+    border-radius: 50%;
+}
+.vlmcont .drop::before{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 85px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.9;
+}
+.vlmcont .drop::after{
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 110px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.9;
+}
+.vlmcont .drop .content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    gap: 15px;
+}
+
+.vlmcont .drop .content h2{
+    position: relative;
+    color: #333;
+    font-size: 1.5em;
+}
+  
+.vlmcont .drop .content form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.vlmcont .drop .content form .inputbox{
+    position: relative;
+    width: 225px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1),
+    inset -2px -5px 10px rgba(255,255,255, 1),
+    15px 15px 10px rgba(0,0,0, 0.05),
+    15px 10px 15px rgba(0,0,0, 0.25);
+    border-radius: 25px;
+}
+.vlmcont .drop .content form .inputbox::before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 2px;
+    background: rgba(255,255,255, .3);
+    border-radius: 5px;
+    z-index: 1;
+}
+.vlmcont .drop .content form .inputbox input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 15px;
+}
+.vlmcont .drop .content form .inputbox input[type="submit"]{
+    color: rgb(196, 228, 255);
+    font-weight: 500;
+    text-transform: lowercase;
+    cursor: pointer;
+    letter-spacing: .1em;
+    font-size: 1em;
+    transition: 0.5s;
+}
+.vlmcont .drop .content form .inputbox:last-child{
+    background: #00092d;
+    width: 120px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.1),
+    15px 15px 10px rgba(0,0,0, 0.05),
+    15px 10px 15px rgba(0,0,0, 0.25);
+}
+
+.vlmcont .drop .content form .inputbox:last-child:hover{
+    width: 150px;
+}
+
+.btns{
+    position: absolute;
+    right: -150px;
+    bottom: 10px;
+    border: 0;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ccc;
+    line-height: 1.2em;
+    letter-spacing: .1em;
+    font-size: 0.8em;
+    transition: 0.25s;
+    background: #cf2525;
+    box-shadow: 
+    inset 10px 10px 10px rgba(190,1,254, 0.05),
+    15px 25px 10px rgba(190,1,254, 0.05),
+    15px 20px 20px rgba(255, 28, 28, 0.25),
+    inset -10px -10px 15px rgba(255,255,255, 0.5);
+    border-radius: 44% 56% 65% 35% / 57% 58% 42% 43%;
+    text-align: center;
+}
+.btns:hover{
+    border-radius: 50%;
+}
+.btns::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    left: 30px;
+    border-radius: 50%;
+    background: #ccc;
+    opacity: .45;
+}
+
+.btns.signup{
+    width: 80px;
+    height: 80px;
+    bottom: 150px;
+    right: -160px;
+    background: #6018c5;
+    box-shadow: 0 0 10px -3px #333 ;
+}
+@media (max-width: 516px) {
+    .btns.signup{
+        position: relative;
+        margin-top: -40em;
+        left: -2em;
+    }
+    .btns{
+        position: relative;
+        left: -15em;
+        margin-bottom: -35em;
+    }
+    .vlmcont .drop{
+        position: relative;
+        left: 37%;
+    }
+
+}
+@media (max-width: 408px) {
+    .btns.signup{
+        position: relative;
+        margin-top: -40em;
+        left: -10em;
+        top: -20em;
+    }
+    .btns{
+        position: relative;
+        left: -10em;
+        top: 1em;
+        margin-bottom: -35em;
+    }
+    .vlmcont .drop{
+        position: relative;
+        left: 37%;
+    }
+
+}
+.error{
+    position: absolute;
+    margin-top: -37em;
+    padding: 10px 10px 10px;
+    font-family: cursive;
+    font-size: 15px;
+    box-shadow: inset 0 2px 20px -10px red;
+    color: red;
+    border-radius: 5px;
+}
+.inputboxs{
+    display: inline;
+    margin-top: -10px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+}
+.inputboxs a{
+    text-decoration: none;
+    color: #042cce;
+    /* background: rebeccapurple; */
+    height: 50px;
+    width: 100%;
+    
+}
+.inputboxs a:last-of-type{
+    position: relative;
+    left: 1.6em;
+    color:rgb(220, 11, 0);
+}
+.inputboxs a:first-of-type{
+    position: relative;
+    left: -1.5em;
+    color:#1b2b3b;
+
+}
+
+
+        </style>
+   
+  </head>
+  <body>
+    <div class="error" style=<%=dis %>>
+        <p><%= vlmerr %></p>
+    </div>
+    <div class="vlmcont">
+
+        <div class="drop">
+          <div class="content">
+          <h2>Sign in</h2>
+          <form action="#" method="post">
+            <div class="inputboxs">  
+                     
+                <a href="#" onclick="redirectTo('/auth/google')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                        <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                      </svg>
+                </a>
+        
+                <a href="#" onclick="redirectTo('/auth/twitter')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                    </svg>
+                </a>
+                <a href="#" onclick="redirectTo('/auth/facebook')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg>
+                </a>
+
+          </div>
+          <div class="inputbox">
+              <input type="email" name="email" placeholder="Email">
+          </div>
+          <div class="inputbox">
+              <input type="password" name="password" placeholder="password">
+          </div>
+          <div class="inputbox">
+              <input type="submit" value="LogIn">
+          </div>
+      </form>
+          </div>
+        </div>
+        <!-- ref -->
+        <a href="#" class="btns">Forgot password ?</a>
+        <a href="/signup" class="btns signup">Signup</a>
+      </div>
+
+      <script>
+        function redirectTo(path) {
+          window.location.href = path;
+        }
+      </script>
+
+</body>
+  </html>

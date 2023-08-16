@@ -1,0 +1,23 @@
+
+<%- include('./partials/header.ejs') %>
+<!-- vlm main part -->
+<main id="main" class="main">
+    <div class="d-flex justify-content-between flex-wrap flex-md nowrp align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md 0">
+            <div class="btn-group me-2">
+                <a href="/admin/add" class="btn btn-sm btn-outline-secondary">+ Add Admin</a>
+              </div>
+        </div>
+    </div>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    
+    <!-- End Page Title -->
+
+  </main><!-- End #main -->
+<%- include('./pages/sidebar.ejs') %>
+
+<%- include('./partials/footer.ejs') %>
